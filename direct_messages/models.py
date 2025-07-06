@@ -22,10 +22,12 @@ class Message(CommonModel):
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
+        related_name="messages",
     )
     chat_room = models.ForeignKey(
         "direct_messages.ChatRoom",
         on_delete=models.CASCADE,
+        related_name="messages",
     )
 
     def __str__(self):
