@@ -13,10 +13,10 @@ class WordFilter(admin.SimpleListFilter):
         ]
 
     def queryset(self, request, reviews):
-        v = self.value()
-        if v == "good":
+        word = self.value()
+        if word == "good":
             return reviews.filter(rating__gte=3)
-        elif v == "bad":
+        elif word == "bad":
             return reviews.filter(rating__lt=3)
         else:
             return reviews
