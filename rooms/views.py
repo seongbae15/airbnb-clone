@@ -3,5 +3,9 @@ from django.http import HttpResponse
 
 
 # Create your views here.
-def say_hello(request):
-    return HttpResponse("Hello")
+def see_all_rooms(request):
+    return HttpResponse("See all rooms")
+
+
+def see_one_room(request, room_id):
+    return HttpResponse(f"See one room with {room_id}")
